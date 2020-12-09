@@ -1,7 +1,6 @@
 package vn.poly.apptruyen.ui;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         NguoiDung user2;
         user2 = nguoiDungDao.getUser("admin");
         if (user2 == null) {
-            NguoiDung user3 = new NguoiDung("admin", "123456", "0971212204", "Tran anh tu");
+            NguoiDung user3 = new NguoiDung("admin", "123456");
             nguoiDungDao.insertNguoiDung(user3);
         }
         checkLogin();
@@ -57,13 +56,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, ThemNguoiDungActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnquenmatkhau.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, DoiMatKhauActivity.class);
                 startActivity(intent);
             }
         });
@@ -112,21 +104,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-
-
-    public void rememberUser(String u, String p, boolean status) {
-        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
-        SharedPreferences.Editor edit = pref.edit();
-        if (!status) {
-            edit.clear();
-        } else {
-            edit.putString("USERNAME", u);
-            edit.putString("PASSWORD", p);
-            edit.putBoolean("REMEMBER", status);
-        }
-        edit.commit();
     }
 
 

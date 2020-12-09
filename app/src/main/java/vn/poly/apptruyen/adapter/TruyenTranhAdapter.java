@@ -56,6 +56,7 @@ public  void sortTruyen(String s){
             tenTenTruyen.setText(truyenTranh.getTenTruyen());
             tenTenChap.setText(truyenTranh.getTenChap());
             Glide.with(this.ct).load(truyenTranh.getLinkAnh()).into(imgAnhtruyen);
+
         }
 return convertView;
     }

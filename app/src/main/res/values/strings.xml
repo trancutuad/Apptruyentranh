@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppTruyen</string>
+    <string name="app_name">lOGINDATA</string>
     <string name="prompt_email">Username</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>

@@ -33,7 +33,7 @@ public class ManHinhChuActivity extends AppCompatActivity implements LayTruyenVe
     TruyenTranhAdapter adapter;
     ArrayList<TruyenTranh> truyenTranhArrayList;
     EditText edtTimKiem;
-    private ImageView nguoidung;
+    ImageView nguoidung;
 
 
 

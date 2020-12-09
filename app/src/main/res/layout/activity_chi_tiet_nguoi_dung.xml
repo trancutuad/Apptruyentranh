@@ -5,42 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".ui.ChiTietNguoiDungActivity">
+
+
     <TextView
+        android:gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textAlignment="center"
         android:textSize="20sp"
         android:layout_marginBottom="15dp"
         android:textColor="@color/colorPrimaryDark"
         android:text="Sửa Người Dùng"/>
 
+    <TextView
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:id="@+id/edUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản:"
+        android:padding="20dp"
+        />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Họ và tên"
-            android:id="@+id/edFullName"/>
+    <TextView
+        android:padding="4dp"
+        android:text="PASSWORD :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
 
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Số điện thoại"
-            android:id="@+id/edPhone"/>
-
-
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="pass"
-            android:id="@+id/edmatkhau"/>
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="entry password"
+        android:id="@+id/edPassWord"/>
 
     <LinearLayout
         android:layout_marginTop="5dp"

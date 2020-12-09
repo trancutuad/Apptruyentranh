@@ -42,7 +42,6 @@ public class ChapTruyen {
         id= o.getString("id");
 
 
-
     }
 
 

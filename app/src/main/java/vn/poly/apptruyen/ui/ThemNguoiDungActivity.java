@@ -51,18 +51,15 @@ public class ThemNguoiDungActivity extends AppCompatActivity {
     private void initView() {
 
         edUserName = (EditText) findViewById(R.id.edUserName);
-        edfullname = (EditText) findViewById(R.id.edfullname);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtPassword2 = (EditText) findViewById(R.id.edtPassword2);
-        edtphone = (EditText) findViewById(R.id.edtphone);
         btnadduser = (Button) findViewById(R.id.btnadduser);
 
     }
 
     public void addUser() {
         nguoiDungDao = new NguoiDungDao(ThemNguoiDungActivity.this);
-        NguoiDung user = new NguoiDung(edUserName.getText().toString(), edtPassword.getText().toString(),
-                edtphone.getText().toString(), edfullname.getText().toString());
+        NguoiDung user = new NguoiDung(edUserName.getText().toString(), edtPassword.getText().toString());
         try {
             if (validateForm()>0){
                 if (nguoiDungDao.insertNguoiDung(user)>0){
@@ -84,8 +81,7 @@ public class ThemNguoiDungActivity extends AppCompatActivity {
 
     public int validateForm() {
         int check = 1;
-        if (edUserName.getText().length() == 0 || edfullname.getText().length() == 0
-                || edtphone.getText().length() == 0 || edtPassword.getText().length() == 0
+        if (edUserName.getText().length() == 0 || edtPassword.getText().length() == 0
                 || edtPassword2.getText().length() == 0) {
             Toast.makeText(getApplicationContext(), "Bạn phải nhập đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;

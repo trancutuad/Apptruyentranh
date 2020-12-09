@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -15,11 +16,10 @@ import vn.poly.apptruyen.dao.NguoiDungDao;
 
 public class ChiTietNguoiDungActivity extends AppCompatActivity {
 
-    private EditText edFullName;
-    private EditText edPhone;
-    private EditText edmatkhau;
+    private EditText edPassWord;
     NguoiDungDao nguoiDungDao;
-    String username,fullname,phone,password;
+    String username,password;
+    TextView edUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,9 @@ public class ChiTietNguoiDungActivity extends AppCompatActivity {
         initView();
         setTitle("Chi Tiết Người Dùng");
 
+        edPassWord = findViewById(R.id.edPassWord);
+        edUsername=findViewById(R.id.edUsername);
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -35,19 +38,17 @@ public class ChiTietNguoiDungActivity extends AppCompatActivity {
         nguoiDungDao= new NguoiDungDao(ChiTietNguoiDungActivity.this);
         Intent intent = getIntent();
         Bundle b= intent.getExtras();
-        fullname = b.getString("FULLNAME");
-        phone=b.getString("PHONE");
-        username=b.getString("USERNAME");
-        password=b.getString("USERNAME");
 
-        edFullName.setText(fullname);
-        edPhone.setText(phone);
-        edmatkhau.setText(password);
+        username=b.getString("USERNAME");
+        password=b.getString("PASSWORD");
+
+
+        edPassWord.setText(password);
+        edUsername.setText("Tài khoản: "+username);
     }
 
     public void UpdateUser(View view) {
-        if (nguoiDungDao.updateInfoNguoiDung(username,edPhone.getText().toString(),
-                edFullName.getText().toString(),username.getBytes().toString())>0){
+        if (nguoiDungDao.updateInfoNguoiDung(username,edPassWord.getText().toString())>0){
             Toast.makeText(getApplicationContext(), "Lưu Thành Công", Toast.LENGTH_SHORT).show();
 
             Intent a = new Intent(ChiTietNguoiDungActivity.this,NguoidungActivity.class);
@@ -61,9 +62,8 @@ finish();
     }
 
     private void initView() {
-        edFullName = (EditText) findViewById(R.id.edFullName);
-        edPhone = (EditText) findViewById(R.id.edPhone);
-        edmatkhau = (EditText) findViewById(R.id.edPhone);
+
+        edPassWord = (EditText) findViewById(R.id.edPassWord);
 
     }
 

@@ -21,13 +21,11 @@
             android:src="@drawable/update"
 
             />
-            <ImageView
-            android:tint="#fff"
+        <ImageView
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:padding="15dp"
             android:layout_alignParentLeft="true"
-
             android:id="@+id/nguoidung"
             android:src="@drawable/user"
 
